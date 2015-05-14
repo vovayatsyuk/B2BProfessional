@@ -163,6 +163,7 @@ class Sitewards_B2BProfessional_Model_Observer
         foreach ($oProductCollection as $oProduct) {
             if ($this->oB2BHelper->isProductActive($oProduct) === false) {
                 $oProduct->setRequiredOptions(array($oDummyOption));
+                $oProduct->addOption($oDummyOption);
             }
         }
         return $oProductCollection;
